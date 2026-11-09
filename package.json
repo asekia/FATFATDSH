@@ -1,0 +1,54 @@
+{
+    "name": "dsh-wire-forge",
+    "version": "1.0.2",
+    "description": "Wire-level conversation-history forger for DeepSeek Harness LLM adapters",
+    "type": "module",
+    "main": "index.mjs",
+    "exports": {
+        ".": "./index.mjs",
+        "./kernel-mount": "./kernel-mount.mjs"
+    },
+    "bin": {
+        "dsh-wire-forge": "./install.mjs"
+    },
+    "dsh": {
+        "bundle": {
+            "patch": "./cordis.patch.yml"
+        }
+    },
+    "files": [
+        "index.mjs",
+        "install.mjs",
+        "patch-adapters.mjs",
+        "kernel-mount.mjs",
+        "cordis.patch.yml",
+        "README.md",
+        "LICENSE",
+        "docs/banner.svg",
+        "docs/armor.md"
+    ],
+    "scripts": {
+        "check": "node install.mjs --check",
+        "apply": "node install.mjs --apply",
+        "kernel": "node install.mjs --kernel",
+        "revert": "node install.mjs --revert"
+    },
+    "engines": {
+        "node": ">=18",
+        "dsh": ">=0.2.0"
+    },
+    "keywords": [
+        "dsh",
+        "deepseek-harness",
+        "llm",
+        "adapter",
+        "prompt"
+    ],
+    "license": "MIT",
+    "author": "asekia",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/asekia/FATFATDSH.git"
+    },
+    "homepage": "https://github.com/asekia/FATFATDSH"
+}
