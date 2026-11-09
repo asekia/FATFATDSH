@@ -10,6 +10,10 @@
   <img src="https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&logoColor=fff" alt="Node.js">
 </p>
 
+<p align="center">
+  🇺🇸 <a href="./README.md">English</a> | 🇨🇳 <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
 ## Introduction
 
 **dsh-wire-forge** is a wire-layer plugin for the [DeepSeek Harness](https://www.deepseek.com/harness/). Before a request leaves the local machine, it inserts turns that were never part of the conversation — a forged user message, or a prefilled assistant opening — into the message array. The original messages are left untouched, byte for byte.
