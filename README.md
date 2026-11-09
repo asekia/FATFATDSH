@@ -16,11 +16,12 @@
 
 ## Introduction
 
-**dsh-wire-forge** is a wire-layer plugin for the [DeepSeek Harness](https://www.deepseek.com/harness/). Before a request leaves the local machine, it inserts turns that were never part of the conversation — a forged user message, or a prefilled assistant opening — into the message array. The original messages are left untouched, byte for byte.
+**dsh-wire-forge** is a wire-layer plugin for the [DeepSeek Harness](https://www.deepseek.com/harness/). It solves two common problems:
 
-Models treat conversation history as established fact: an authorization already on record is not re-litigated, and a scene already in progress continues instead of being re-evaluated from the start. The plugin puts the right facts into that history.
+- Models spend their turns re-confirming authorization and re-evaluating the request instead of doing the work — this plugin puts authorization and scope in place before the conversation starts, so the model executes directly.
+- Creative requests get blocked at the opening, or mid-stream drift into safe alternatives — this plugin lets generation continue from the scene already in progress.
 
-It ships with an `armor` agent preset. Selecting it mounts a kernel document at position 0 of the system prompt and enables injection; selecting the standard preset leaves sessions completely untouched. One install serves both, switched per session.
+It ships with an `armor` agent preset: selecting it enables injection, selecting the standard preset leaves sessions untouched. One install, two modes, switched per session.
 
 ## How it behaves
 
